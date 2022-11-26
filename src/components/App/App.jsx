@@ -49,7 +49,8 @@ export default function App() {
           setLoadBtnIsShown(true);
         }
 
-        setImages([...images, ...fetchImages.hits]);
+        //setImages([...images, ...fetchImages.hits]);
+        setImages(prevImages => [...prevImages, ...fetchImages.hits]);
         setStatus(STATUS.resolved);
       } catch (error) {
         setError(error);
